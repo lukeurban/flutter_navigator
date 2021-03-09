@@ -1,16 +1,16 @@
-# navigator
+# Flutter navigator
 
-A new Flutter project.
+Sample project showing modular navigation pattern
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+There are three modules in the example: `Main`, `TestOne`, `TestTwo` (I know great names. Thank you.)
+Each module has two example screens. As an example flow is like this:
+```
+MainTmp1                    TestOneTmp2   -CrossModule*->   TestTwoTmp1
+    |                           /\                               |
+    \/                           |                              \/
+MainTmp2  -CrossModule*->   TestOneTmp1                     TestTwoTmp2
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+CrossModule* - Here happens cross modula navigation (call me Sherlock)
+```

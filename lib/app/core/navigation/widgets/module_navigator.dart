@@ -87,27 +87,33 @@ class _ModuleNavigatorState extends State<ModuleNavigator> {
   Widget build(BuildContext context) {
     return ModuleNavigatorData(
       data: this,
-      child: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _currentModule,
-          onTap: (index) {
-            if (index == _currentModule) {
-              _popToFirstRoute();
-            }
-            setState(() {
-              _currentModule = index;
-            });
-          },
-          items: widget.modules.entries
-              .map((module) => BottomNavigationBarItem(
-                    label: module.value.name,
-                    icon: module.value.icon,
-                  ))
-              .toList(),
-        ),
-        body: IndexedStack(
-          index: _currentModule,
-          children: builtModules,
+      child: WillPopScope(
+        onWillPop: () async {
+          _navigationKeys[_currentModule].currentState.maybePop();
+          return false;
+        },
+        child: Scaffold(
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: _currentModule,
+            onTap: (index) {
+              if (index == _currentModule) {
+                _popToFirstRoute();
+              }
+              setState(() {
+                _currentModule = index;
+              });
+            },
+            items: widget.modules.entries
+                .map((module) => BottomNavigationBarItem(
+                      label: module.value.name,
+                      icon: module.value.icon,
+                    ))
+                .toList(),
+          ),
+          body: IndexedStack(
+            index: _currentModule,
+            children: builtModules,
+          ),
         ),
       ),
     );
