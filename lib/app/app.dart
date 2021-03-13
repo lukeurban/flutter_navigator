@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:navigator/app/core/navigation/widgets/module_navigator.dart';
-import 'package:navigator/app/modules/main/main_module.dart';
-import 'package:navigator/app/modules/test_one/test_one_module.dart';
-import 'package:navigator/app/modules/test_two/test_two_module.dart';
+import 'package:navigator/app/modules/module_a/module_a.dart';
+import 'package:navigator/app/modules/module_b/module_b.dart';
+import 'package:navigator/app/modules/module_c/module_c.dart';
 
 class AppModules {
-  static int main = 0;
-  static int testOne = 1;
-  static int testTwo = 2;
+  static int moduleA = 0;
+  static int moduleB = 1;
+  static int moduleC = 2;
 }
 
 class App extends StatefulWidget {
@@ -20,11 +20,11 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: ModuleNavigator(
-        intialModule: AppModules.main,
+        intialModule: AppModules.moduleA,
         modules: {
-          AppModules.main: MainModule(),
-          AppModules.testOne: TestOneModule(),
-          AppModules.testTwo: TestTwoModule(),
+          AppModules.moduleA: ModuleA(),
+          AppModules.moduleB: ModuleB(),
+          AppModules.moduleC: ModuleC(),
         },
       ),
     );

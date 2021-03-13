@@ -67,6 +67,7 @@ class _CustomNavigatorState extends State<CustomNavigator> {
       initialRoute: widget.initialRoute,
       onGenerateRoute: _onGenerateRoute,
       observers: [
+        ...widget.observers,
         _heroController,
       ],
     );

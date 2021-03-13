@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:navigator/app/modules/test_two/screens/test_two_tmp2.dart';
+import 'package:navigator/app/modules/module_c/screens/module_c_tmp2.dart';
 
-class TestTwoTmp1 extends StatelessWidget {
-  static String route = '/test-two/tmp1';
-  const TestTwoTmp1({Key key}) : super(key: key);
+class ModuleCTmp1 extends StatelessWidget {
+  static String route = '/C/tmp1';
+  const ModuleCTmp1({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,14 +11,14 @@ class TestTwoTmp1 extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('TestTwoTmp1'),
+            Text('ModuleCTmp1'),
             RaisedButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(
-                  TestTwoTmp2.route,
+                  ModuleCTmp2.route,
                 );
               },
-              child: Text('Go to TestTwoTmp2'),
+              child: Text('Go to ModuleCTmp2'),
             )
           ],
         ),

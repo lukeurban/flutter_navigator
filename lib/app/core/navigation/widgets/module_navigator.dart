@@ -66,9 +66,7 @@ class _ModuleNavigatorState extends State<ModuleNavigator> {
 
   Widget _buildOffstageNavigator(int index, Module module) {
     return CustomNavigator(
-      observers: [
-        // add observers -> can be from module object
-      ],
+      observers: [],
       navigatorKey: _navigationKeys[index],
       pageRoute: PageRoutes.cupertinoPageRoute,
       initialRoute: module.initialRoute,

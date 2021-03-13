@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:navigator/app/app.dart';
 import 'package:navigator/app/core/navigation/widgets/module_navigator.dart';
-import 'package:navigator/app/modules/test_two/screens/test_two_tmp1.dart';
+import 'package:navigator/app/modules/module_b/screens/module_b_tmp1.dart';
 
-class TestOneTmp2 extends StatelessWidget {
-  static String route = '/test-one/tmp2';
-  const TestOneTmp2({Key key}) : super(key: key);
+class ModuleATmp2 extends StatelessWidget {
+  static String route = '/A/tmp2';
+  const ModuleATmp2({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,15 +13,15 @@ class TestOneTmp2 extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('TestOneTmp2'),
+            Text('ModuleATmp2'),
             RaisedButton(
               onPressed: () {
                 ModuleNavigator.of(context).pushModuleAndRouteNamed(
-                  AppModules.testTwo,
-                  TestTwoTmp1.route,
+                  AppModules.moduleB,
+                  ModuleBTmp1.route,
                 );
               },
-              child: Text('Go to TestTwoTmp1'),
+              child: Text('Go to ModuleBTmp1'),
             )
           ],
         ),
