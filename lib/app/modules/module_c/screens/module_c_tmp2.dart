@@ -7,6 +7,7 @@ class ModuleCTmp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red,
       body: Center(
         child: Text('ModuleCTmp2'),
       ),

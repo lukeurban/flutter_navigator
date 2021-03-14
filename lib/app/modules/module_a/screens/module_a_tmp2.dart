@@ -10,6 +10,7 @@ class ModuleATmp2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       body: Center(
         child: Column(
           children: [
